@@ -6,7 +6,7 @@ import { CiShoppingCart } from "react-icons/ci";
 import LowerHeader from "./LowerHeader";
 import { Link } from "react-router-dom";
 import { DataContext } from "../dataProvider/DataProvider";
-// import { auth } from "../../Utility/firebase";
+import { auth } from "../../utility/firebase";
 
 const Header = () => {
   const [{ user, basket }, dispatch] = useContext(DataContext);
@@ -57,16 +57,12 @@ const Header = () => {
                 <option value="">EN</option>
               </select>
             </Link>
-            {/* <Link to={!user && "/auth"}> */}
-            <Link to="">
+            <Link to={!user && "/auth"}>
+            
               <div>
-                <>
-                 
-                  <p>Hello, Sign In</p>
-                  <span>Account & Lists</span>
-                </>
+               
 
-                {/* {user ? (
+                {user ? (
 
                 
                   <>
@@ -80,7 +76,7 @@ const Header = () => {
                     <p>Hello, Sign In</p>
                     <span>Account & Lists</span>
                   </>
-                )} */}
+                )}
               </div>
             </Link>
             <Link to="/orders">
